@@ -1,0 +1,209 @@
+.pokemon-card {
+  width: 25%;
+  margin: 10px 50px 40px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px -2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+    
+}
+  
+.pokemon-img-container {
+  padding: 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+  
+.pokemon-img {
+  height: 70%;
+  border-bottom: solid white 1px;
+}
+
+.pokemon-characteristics{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+}
+
+.pokemon-type {
+  display: flex;
+  align-items: center;
+}
+
+.pokemon-type-text {
+  margin-right: 10px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.25);  
+}
+
+.pokemon-ability-text {
+  margin-right: 10px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 7px;
+  margin: 5px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+  /* background-color: #313131; */
+  color:black;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top h3 {
+  text-transform: capitalize;
+}
+
+
+
+/********************/
+#normal {
+  background-color: lavender;
+}
+#fire {
+  background-color:rgb(255, 208, 154);
+}
+#water {
+  background-color: rgb(177, 226, 250);
+}
+#grass {
+  background-color:rgb(196, 249, 196);
+}
+#electric {
+  background-color:rgb(243, 243, 94)
+}
+#ice{
+  background-color: rgb(191, 249, 230);
+}
+#fighting{
+  background-color: rgb(200, 111, 111);
+}
+#poison {
+  background-color: rgb(190, 158, 255);
+}
+#ground {
+  background-color: burlywood;
+}
+#flying{
+  background-color: rgb(169, 193, 248);
+}
+#psychic{
+  background-color: rgb(188, 129, 188);
+}
+#bug { /*BICHO*/
+  background-color: rgb(169, 202, 103);
+}
+#rock {
+  background-color: rgb(180, 138, 97);
+}
+#ghost {
+  background-color: rgb(139, 87, 139);
+}
+#dragon{
+  background-color: rgb(142, 126, 234);
+}
+#dark{
+  background-color: slategray;
+}
+#steel{
+  background-color: rgb(183, 181, 181);
+}
+#fairy {
+  background-color: rgb(249, 182, 239)
+}
+#unknown{
+  background-color: lightgray;
+}
+
+/************************/
+#pokemon-card-normal {
+  background-color: rgb(210, 210, 210);
+}
+#pokemon-card-fire {
+  background-color:rgb(239, 213, 183);
+}
+#pokemon-card-water {
+  background-color: rgb(209, 236, 249);
+}
+#pokemon-card-grass {
+  color:black;
+  background-color:rgb(213, 243, 213);
+}
+#pokemon-card-electric {
+  background-color:rgb(224, 224, 166)
+}
+#pokemon-card-ice{
+  background-color: rgb(187, 222, 211);
+}
+#pokemon-card-pokemon-card-fighting{
+  background-color: rgb(182, 136, 136);
+}
+#pokemon-card-poison {
+  background-color: rgb(190, 158, 255);
+}
+#pokemon-card-ground {
+  background-color: burlywood;
+}
+#pokemon-card-flying{
+  background-color: rgb(169, 193, 248);
+}
+#pokemon-card-psychic{
+  background-color: rgb(188, 129, 188);
+}
+#pokemon-card-bug { /*BICHO*/
+  background-color: rgb(169, 202, 103);
+}
+#pokemon-card-rock {
+  background-color: rgb(180, 138, 97);
+}
+#pokemon-card-ghost {
+  background-color: rgb(139, 87, 139);
+}
+#pokemon-card-dragon{
+  background-color: rgb(142, 126, 234);
+}
+#pokemon-card-dark{
+  background-color: slategray;
+}
+#pokemon-card-steel{
+  background-color: rgb(183, 181, 181);
+}
+#pokemon-card-fairy {
+  background-color: rgb(249, 182, 239)
+}
+#pokemon-card-unknown{
+  background-color: lightgray;
+}
+/************************/
+
+
+h2{
+  text-transform: capitalize;
+}
+
+b{
+  margin-right: 10px;
+}
