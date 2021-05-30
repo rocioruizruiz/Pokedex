@@ -27,6 +27,9 @@ Starting on local
 ```
 npm start
 ```
+### Set up
+
+Remember to copy the .env.sample file on an .env file on yout project
 
 ## 🖇 Dependencies
 
