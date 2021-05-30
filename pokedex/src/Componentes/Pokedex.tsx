@@ -3,8 +3,8 @@ import React, {FC} from "react";
 import Pokemon from "./Pokemon";
 import {IPokemon} from './Pokemon'
 import './Pokedex.css'
-import ClipLoader from 'react-spinners/ClipLoader'
 import Pokeball from '../img/pokeballGif.png'
+
 
 interface IProps {
     pokemons: IPokemon[],
@@ -19,7 +19,6 @@ const Pokedex:FC<IProps> = (props:IProps) => {
     <div className="grid-container">
       {loading ? (
         <div className="ClipLoader">
-          {/* <ClipLoader color="#0000ff" size="50pxs"/> */}
           <img src={Pokeball} className="Loader" alt="Loader"></img>
         </div>
         

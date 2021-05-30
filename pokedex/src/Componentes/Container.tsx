@@ -1,11 +1,12 @@
 import react, {FC, useState, useEffect} from 'react'
 
 import './Container.css'
-import {IPokemon} from './Pokemon'
+import {IPokemon, IEv} from './Pokemon'
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Pokedex from './Pokedex'
 import logo from '../img/pokeapi-logo.png'
+
 
 
 export interface IPokemons{
@@ -18,6 +19,8 @@ export interface IPokemons{
   }[],
 }
 
+
+
 const Container:FC = () => {
     const [pokemons, setPokemons] = useState<IPokemon[]>([]);
     const [page, setPage] = useState(0);
@@ -26,25 +29,41 @@ const Container:FC = () => {
     const [notFound, setNotFound] = useState(false);
     const [searching, setSearching] = useState(false);
 
-
+    //Math.floor((parseInt(data.id)-1)/3)+1
     const fetchPokemons = async () => {
       try {
         setLoading(true);
         let url = `${process.env.REACT_APP_API_URL}?limit=${21}&offset=${21*page}`;
         const response = await axios(url);
         const data:IPokemons = await response.data;
+        let idFam:number = 1;
+
+        const responseEv = await axios(`https://pokeapi.co/api/v2/evolution-chain/`);
+        let dataEv:{} = await response.data.chain; 
+        
         const promises = data.results.map(async (pokemon) => {
-          const response = await fetch(pokemon.url);
-          const data = await response.json();
+
+          const response = await axios(pokemon.url);
+          const data:IPokemon = await response.data;
+          const responsespecies = await axios(data.species.url);
+          const dataspecies = await responsespecies.data;
+          const ev_chainresponse = await axios(dataspecies.evolution_chain.url);
+          const ev_chaindata = await ev_chainresponse.data;
+          data.evolution = ev_chaindata.chain;
+          
           return data;
         });
-        const results: IPokemon[] = await Promise.all(promises);
+        const results = await Promise.all(promises);
         setPokemons(results);
         setLoading(false);
         setTotal(Math.ceil(data.count / 20));
         setNotFound(false);
       } catch (err) {}
     };
+
+    const letsee = (pokemon:string) => {
+
+    }
   
 
     useEffect(() => {

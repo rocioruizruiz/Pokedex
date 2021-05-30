@@ -34,7 +34,7 @@ const Searchbar:FC<{onSearch:Function, pagination:IProps}> = (props: {onSearch:F
                 <button onClick={() => {onSearch()}}>X</button>
             </div>
         </div>
-        <div className="header">
+        <div className="header-btn">
             <div className="pagination">
                 <button className="pagination-btn" onClick={() => {
                     const nextPage = Math.max(page - 1, 0);

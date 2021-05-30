@@ -1,12 +1,12 @@
 .searchbar-container {
   display: flex;
-  flex-wrap: wrap;
+  width: 100vw;
   margin: 0px 0px;
   box-sizing: border-box;
-  padding: 30px 10% 30px 8%;
+  padding: 10px 10% 10px 8%;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .all-searchbar{
@@ -45,6 +45,13 @@
 header{
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.header-btn{
+  display: flex;
+  justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
 }
