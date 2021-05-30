@@ -75,21 +75,7 @@ export interface IEv{
 const Pokemon:FC<{pokemon:IPokemon}> = (props:{pokemon:IPokemon}) => {
     const pokemon  = props.pokemon;
     const style = "pokemon-card-" + pokemon.types[0].type.name;
-    let e;
 
-    const getEvolutionChain = async(id:string) =>{
-        try {
-            const response = await axios.get(`https://pokeapi.co/api/v2/evolution-chain/${id}/`)
-            const result = await response.data;
-            console.log(result.chain.evolves_to[0].species.name);
-            // e = result.chain;
-            // console.log(e);
-        }catch (error) {
-            console.log("Not evolution chain found")
-        }
-    }
-
-    let a;
     return (
     <div className="pokemon-card" id={style}>
         <div className="pokemon-img-container">
