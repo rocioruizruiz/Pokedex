@@ -1,7 +1,7 @@
 # Pokedex <img src="https://www.nebrija.com/lp/2019/inc/common/assets/img/logo_nebrija.png" height="50px" align="right" />
 
 * Stack 🛠: React, Typescript and CSS.
-* Everbase web that fetch data from Everbase public API.
+* Pokedex web that fetch data from Pokeapi public API.
 
 Functionalities: 
 * List Pokemons.
