@@ -1,62 +1,96 @@
-import React, {FC, useState} from "react";
-import './Searchbar.css'
-
-
+import React, { FC, useState } from "react";
+import RightArrow from "../img/right.png";
+import LeftArrow from "../img/left.png";
+import "./Searchbar.css";
 
 interface IProps {
-  page: number,
-  setPage: Function,
-  total: number,
-  loading: boolean
+  page: number;
+  setPage: Function;
+  total: number;
+  loading: boolean;
 }
 
-const Searchbar:FC<{onSearch:Function, pagination:IProps}> = (props: {onSearch:Function, pagination:IProps}) => {
-  const {page, setPage, total}  = props.pagination;
-  const  onSearch  = props.onSearch;
+const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
+  onSearch: Function;
+  pagination: IProps;
+}) => {
+  const { page, setPage, total } = props.pagination;
+  const onSearch = props.onSearch;
   const [search, setSearch] = useState("");
 
-  const onChange = (e:any) => {
+  const onChange = (e: any) => {
     setSearch(e.target.value);
     console.log(search);
   };
 
-
   return (
     <div className="searchbar-container">
-        <div className="all-searchbar">
-            <div className="searchbar">
-                <input placeholder="Buscar pokemon..." onChange={onChange} />
-            </div>
-            <div className="searchbar-btn">
-                <button onClick={() => {onSearch(search)}}>Buscar</button>
-            </div>
-            <div className="searchbar-btn">
-                <button onClick={() => {onSearch()}}>X</button>
-            </div>
+      <div className="all-searchbar">
+        <div className="searchbar">
+          <input
+            type="search"
+            placeholder="Buscar Pokemon..."
+            onChange={onChange}
+          />
         </div>
-        <div className="header-btn">
-            <div className="pagination">
-                <button className="pagination-btn" onClick={() => {
-                    const nextPage = Math.max(page - 1, 0);
-                    setPage(nextPage);
-                }}>
-                    <div className="icon">
-                      {'<'}
-                    </div>
-                </button>
-                <div>
-                    {page+1} de {total}
-                </div>
-                <button className="pagination-btn" onClick={() => {
-                    const nextPage = Math.min(page + 1, total - 1);
-                    setPage(nextPage);
-                }}>
-                    <div className="icon">
-                      {'>'}
-                    </div>
-                </button>
-            </div>
+        <div className="searchbar-btn">
+          <button
+            onClick={() => {
+              onSearch(search);
+            }}
+          >
+            Buscar
+          </button>
         </div>
+        <div className="searchbar-btn">
+          <button
+            onClick={() => {
+              onSearch();
+            }}
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+      <div className="header-btn">
+        <div className="pagination">
+          <input
+            type="image"
+            src={LeftArrow}
+            id="pagination-btn-L"
+            alt="pagination-btn-L"
+            onClick={() => {
+              const nextPage = Math.max(page - 1, 0);
+              setPage(nextPage);
+              if (nextPage === 0)
+                document.getElementById("pagination-btn-L")!.style.visibility =
+                  "hidden";
+              if (nextPage !== total)
+                document.getElementById("pagination-btn-R")!.style.visibility =
+                  "visible";
+            }}
+          ></input>
+          <div>
+            {page + 1} de {total}
+          </div>
+          <input
+            type="image"
+            src={RightArrow}
+            id="pagination-btn-R"
+            alt="pagination-btn-R"
+            onClick={() => {
+              const nextPage = Math.min(page + 1, total - 1);
+              setPage(nextPage);
+              if (nextPage !== 0)
+                document.getElementById("pagination-btn-L")!.style.visibility =
+                  "visible";
+              if (nextPage === total)
+                document.getElementById("pagination-btn-R")!.style.visibility =
+                  "hidden";
+            }}
+          ></input>
+        </div>
+      </div>
     </div>
   );
 };

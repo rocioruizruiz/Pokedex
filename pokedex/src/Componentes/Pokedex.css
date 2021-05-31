@@ -1,38 +1,34 @@
-
 .pokedex-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px 20px 10px;
-    margin-top: 20px;
-    width: 100vw;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid-container{
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-
-.Loader{
-    width: 200px;
-    height: 200px;
-    animation: loader-spin infinite 1s linear;
-    color: white;
-    padding: 80px;
+.Loader {
+  width: 150px;
+  height: 150px;
+  animation: loader-spin infinite 0.5s linear;
+  padding: 80px;
+  display: block;
+  margin: 0 auto;
 }
 
 @keyframes loader-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.simplebar-scrollbar::before {
+  background-color: #0b096f;
+}
