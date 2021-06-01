@@ -20,7 +20,6 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
 
   const onChange = (e: any) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   return (
