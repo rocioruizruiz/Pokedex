@@ -9,14 +9,7 @@ Functionalities:
 * Sort the results alphabetically or by pokemons id.
 * Pop-Up window with pokemon details by clicking on its name.
 
-## 📝 To Do List 
-- [x] Corregir error al cargar la pagina 6
-- [x] Añadir ordenación por orden alfabético
-- [ ] Formatear radio buttons del tipo de ordenación
-- [x] Not Found al hacer búsqueda y no encontrar resultados
-- [x] Ocultar paginación en modo Not Found
-- [x] Ocultar paginación al hacer una búsqueda, ya que solo habrá una página
-- [ ] Finiquitar Popup
+
 
 ## 🚩 Getting Started
 
@@ -37,6 +30,11 @@ Starting on local
 ```
 npm start
 ```
+
+### Set up
+
+Remember to copy the .env.sample file on an .env file in your project
+
 
 ## 🖇 Dependencies
 
