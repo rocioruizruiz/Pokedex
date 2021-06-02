@@ -109,6 +109,7 @@ const Container: FC = () => {
                 <div
                     onClick={() => {
                         setOrder(false);
+                        setPage(0);
                         fetchPokemons();
                     }}
                 >

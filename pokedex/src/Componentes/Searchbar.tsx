@@ -29,6 +29,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                 <div className="searchbar">
                     <input
                         type="search"
+                        value={search}
                         placeholder="Buscar Pokemon..."
                         onChange={onChange}
                     />
@@ -37,6 +38,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                     <button
                         onClick={() => {
                             onSearch(search);
+                            setSearch('');
                         }}
                     >
                         Buscar
@@ -45,6 +47,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                 <div className="searchbar-btn">
                     <button
                         onClick={() => {
+                            setSearch('');
                             onSearch();
                         }}
                     >
@@ -55,7 +58,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
             <div className="header-btn">
                 {!notFound && (
                     <div className="pagination">
-                        <input
+                        {page !== 0 && total !== 1 && <input
                             type="image"
                             src={LeftArrow}
                             id="pagination-btn-L"
@@ -63,20 +66,13 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                             onClick={() => {
                                 const nextPage = Math.max(page - 1, 0);
                                 setPage(nextPage);
-                                if (nextPage === 0)
-                                    document.getElementById(
-                                        "pagination-btn-L"
-                                    )!.style.visibility = "hidden";
-                                if (nextPage !== total - 1)
-                                    document.getElementById(
-                                        "pagination-btn-R"
-                                    )!.style.visibility = "visible";
                             }}
-                        ></input>
-                        <div>
+                        ></input> }
+                        {total > 1 && <div>
                             {page + 1} de {total}
-                        </div>
-                        <input
+                        </div>}
+                        
+                        {page !== total-1 && <input
                             type="image"
                             src={RightArrow}
                             id="pagination-btn-R"
@@ -84,16 +80,8 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                             onClick={() => {
                                 const nextPage = Math.min(page + 1, total - 1);
                                 setPage(nextPage);
-                                if (nextPage !== 0)
-                                    document.getElementById(
-                                        "pagination-btn-L"
-                                    )!.style.visibility = "visible";
-                                if (nextPage === total - 1)
-                                    document.getElementById(
-                                        "pagination-btn-R"
-                                    )!.style.visibility = "hidden";
                             }}
-                        ></input>
+                        ></input>}
                     </div>
                 )}
             </div>

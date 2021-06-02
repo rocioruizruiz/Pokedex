@@ -61,9 +61,9 @@
     transform: translateX(0px);
 }
 
-#pagination-btn-L {
+/* #pagination-btn-L {
     visibility: hidden;
-}
+} */
 
 #pagination-btn-R:hover {
     transform: translateX(10px);
