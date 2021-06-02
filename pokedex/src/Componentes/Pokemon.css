@@ -93,7 +93,6 @@ b {
     font-size: 35px;
     text-align: center;
     padding: 5px;
-    background-color: #ea312f;
     color: white;
     font-family: "VT323", monospace;
 }
@@ -114,11 +113,11 @@ b {
 .content {
     display: flex;
     align-items: flex-start;
-    background-color: #ea322f3d;
-    border: 3px dashed #ea312f;
-    border-top: 0;
+    border: solid 1px rgb(88, 113, 90);
     font-family: "VT323", monospace;
     font-size: 15px;
+    background: url("../img/forest.png");
+    background-size: 100% 100%;
 }
 
 .popup-img-container {
@@ -127,11 +126,6 @@ b {
     margin: auto;
     width: 200px;
     height: 200px;
-    background: rgba(255, 0, 0, 0.041);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent 0.1em),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5), white 0.1em);
-    background-size: 3em 3em;
-    border: 1px solid rgb(94, 94, 94);
 }
 
 .ev {
@@ -143,6 +137,7 @@ b {
 #popup-border {
     border-left: solid 1px rgb(88, 113, 90);
     padding: 10px;
+    background-color: rgba(255, 255, 255, 0.945);
 }
 
 /******** ANIMATIONS ********/

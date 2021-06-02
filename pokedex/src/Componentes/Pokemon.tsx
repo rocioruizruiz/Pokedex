@@ -1,10 +1,8 @@
 import React, { FC } from "react";
-
 import Tilt from "react-parallax-tilt";
-
-import "./Pokemon.css";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import "./Pokemon.css";
 
 export interface IPokemon {
     id: string;
@@ -104,7 +102,7 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                         >
                                             &times;
                                         </button>
-                                        <div className="header">
+                                        <div className="header" id={style}>
                                             {pokemon.name}
                                         </div>
                                     </div>
