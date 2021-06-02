@@ -96,6 +96,7 @@ const Container: FC = () => {
         page: page,
         setPage: setPage,
         total: total,
+        notFound: notFound,
     };
 
     let pokemons_aux: IPokemon[] = [];
@@ -105,7 +106,12 @@ const Container: FC = () => {
     return (
         <div>
             <nav>
-                <div onClick={ () => {setOrder(false); fetchPokemons();}}> 
+                <div
+                    onClick={() => {
+                        setOrder(false);
+                        fetchPokemons();
+                    }}
+                >
                     <img
                         src={imgUrl}
                         alt="pokeapi-logo"
@@ -116,24 +122,44 @@ const Container: FC = () => {
             <div className="App">
                 <Searchbar onSearch={onSearch} pagination={prop} />
                 {notFound ? (
-                    <div className="not-found-text">🥺 NOT FOUND 🥺</div>
+                    <div className="not-found">
+                        <div className="error404">
+                            4
+                            <div className="pokeball">
+                                <div className="pokeball__button"></div>
+                            </div>{" "}
+                            4
+                        </div>
+                        Sorry, we didn't catch that!
+                    </div>
                 ) : (
                     <div>
-                        <div className="searchbar-btn" id="A-Z">
-                        <button
+                        <div className="viewType">
+                            <input
+                                id="byId"
+                                type="radio"
+                                className="radiobutton"
+                                name="view"
+                                defaultChecked
                                 onClick={() => {
                                     setOrder(false);
                                 }}
-                            >
+                            />
+                            <label htmlFor="byId" className="radiobutton">
                                 ID
-                            </button>
-                            <button
+                            </label>
+                            <input
+                                id="byAZ"
+                                type="radio"
+                                className="radiobutton"
+                                name="view"
                                 onClick={() => {
                                     setOrder(true);
                                 }}
-                            >
+                            />
+                            <label htmlFor="byAZ" className="radiobutton">
                                 A-Z
-                            </button>
+                            </label>
                         </div>
                         {order && (
                             <Pokedex

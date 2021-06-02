@@ -1,34 +1,40 @@
-.pokedex-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.grid-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.pokedex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .Loader {
-  width: 150px;
-  height: 150px;
-  animation: loader-spin infinite 0.5s linear;
-  padding: 80px;
-  display: block;
-  margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    animation: loader-spin infinite 0.8s linear;
+    padding: 80px;
+    display: block;
+    margin: 0 auto;
 }
 
 @keyframes loader-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    0% {
+        animation-timing-function: ease-in;
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        animation-timing-function: ease-out;
+        transform: rotate(-180deg) scale(1.2);
+    }
+    50%,
+    100% {
+        transform: rotate(-360deg) scale(1);
+    }
 }
 
 .simplebar-scrollbar::before {
-  background-color: #0b096f;
+    background-color: #0b096f;
 }

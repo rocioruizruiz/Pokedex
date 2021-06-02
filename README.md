@@ -9,5 +9,10 @@ Functionalities:
 * Search pokemon by Pokemon's name.
 
 ## 📝 To Do List 
-* Corregir error al cargar la pagina 6
-* Añadir ordenación por orden alfabético
+- [x] Corregir error al cargar la pagina 6
+- [x] Añadir ordenación por orden alfabético
+- [ ] Formatear radio buttons del tipo de ordenación
+- [x] Not Found al hacer búsqueda y no encontrar resultados
+- [x] Ocultar paginación en modo Not Found
+- [ ] Ocultar paginación al hacer una búsqueda, ya que solo habrá una página
+- [ ] Finiquitar Popup
