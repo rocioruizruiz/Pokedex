@@ -235,10 +235,20 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                                             </text>
                                                             <div className="ev">
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon.evolution && pokemon.evolution.species.name}
+                                                                    {pokemon.evolution &&
+                                                                        pokemon
+                                                                            .evolution
+                                                                            .species
+                                                                            .name}
                                                                 </div>
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon.evolution.evolves_to.length > 0 && pokemon.evolution
+                                                                    {pokemon
+                                                                        .evolution
+                                                                        .evolves_to
+                                                                        .length >
+                                                                        0 &&
+                                                                        pokemon
+                                                                            .evolution
                                                                             .evolves_to[0]
                                                                             .species
                                                                             .name}
@@ -276,7 +286,8 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                 </div>
                             )}
                         </Popup>
-                        <div>{pokemon.id}</div>
+
+                        <div>No.{pokemon.id}</div>
                     </div>
                     <div className="card-bottom">
                         <div className="pokemon-characteristics">
