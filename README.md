@@ -1,6 +1,6 @@
 # Pokedex <img src="https://www.nebrija.com/lp/2019/inc/common/assets/img/logo_nebrija.png" height="50px" align="right" />
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 * Stack 🛠: React, Typescript and CSS.
@@ -83,6 +83,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="http://www.linkedin.com/in/agustinaagatiello"><img src="https://avatars.githubusercontent.com/u/43046343?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Agustina Agatiello</b></sub></a><br /><a href="https://github.com/rocioruizruiz/Pokedex/commits?author=aagatiello" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/rocio-ruiz-ruiz-955137183"><img src="https://avatars.githubusercontent.com/u/43112530?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rocio Ruiz</b></sub></a><br /><a href="https://github.com/rocioruizruiz/Pokedex/commits?author=rocioruizruiz" title="Code">💻</a></td>
   </tr>
 </table>
 
