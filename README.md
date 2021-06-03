@@ -12,7 +12,7 @@ Functionalities:
 * Sort the results alphabetically or by pokemons id.
 * Pop-Up window with pokemon details by clicking on its name.
 
-<img src="https://github.com/rocioruizruiz/Pokedex/blob/main/Pokedex/img/Pokedex.gif" alt="App Screenshot" style="zoom: 70%" />
+<img src="https://github.com/rocioruizruiz/Pokedex/blob/main/img/Pokedex.gif" alt="App Screenshot" style="zoom: 70%" />
 
 ## 🚩 Getting Started
 
