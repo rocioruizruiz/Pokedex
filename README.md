@@ -22,24 +22,27 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development environment running.
 
-*******************
-
-Installing dependencies
+#### STEP 1: Download the ZIP code or clone the repository
+#### STEP 2: Open the project folder inside the repository
+```
+cd pokedex/
+```
+#### STEP 3: Installing dependencies
 
 ```
 npm install
 ```
-### Set up
+#### STEP 4: Set up the environment variables
 
-Remember to copy the .env.sample file on an .env file in your project
+Copy the .env.sample file on an .env file in your project
 
-### Starting on local
+#### STEP 5: Starting on local
 
 ```
 npm start
 ```
-
-
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
 
 ## 🖇 Dependencies
