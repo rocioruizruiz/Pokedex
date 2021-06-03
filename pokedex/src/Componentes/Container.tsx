@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
 import axios from "axios";
 import logo from "../img/pokeapi-logo.png";
+import byAtoZ from "../img/atoz.png";
+import byPokedex from "../img/pokedex.png";
 import Pokedex from "./Pokedex";
 import { IPokemon } from "./Pokemon";
 import Searchbar from "./Searchbar";
@@ -135,33 +137,28 @@ const Container: FC = () => {
                     </div>
                 ) : (
                     <div>
-                        <div className="viewType">
-                            <input
-                                id="byId"
-                                type="radio"
-                                className="radiobutton"
-                                name="view"
-                                defaultChecked
-                                onClick={() => {
-                                    setOrder(false);
-                                }}
-                            />
-                            <label htmlFor="byId" className="radiobutton">
-                                ID
-                            </label>
-                            <input
-                                id="byAZ"
-                                type="radio"
-                                className="radiobutton"
-                                name="view"
-                                onClick={() => {
-                                    setOrder(true);
-                                }}
-                            />
-                            <label htmlFor="byAZ" className="radiobutton">
-                                A-Z
-                            </label>
-                        </div>
+                        {!loading && (
+                            <div className="viewType">
+                                <button
+                                    id="byId"
+                                    title="Order by pokedex number"
+                                    onClick={() => {
+                                        setOrder(false);
+                                    }}
+                                >
+                                    <img src={byPokedex} alt={"img-byPokedex"}/>
+                                </button>
+                                <button
+                                    id="byAZ"
+                                    title="Order alphabetically"
+                                    onClick={() => {
+                                        setOrder(true);
+                                    }}
+                                >
+                                    <img src={byAtoZ} alt={"img-byAtoZ"}/>
+                                </button>
+                            </div>
+                        )}
                         {order && (
                             <Pokedex
                                 loading={loading}
