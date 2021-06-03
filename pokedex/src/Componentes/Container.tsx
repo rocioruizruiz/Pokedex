@@ -76,7 +76,7 @@ const Container: FC = () => {
             const responsespecies = await axios(result.species.url);
             const dataspecies = await responsespecies.data;
             const ev_chainresponse = await axios(
-                    dataspecies.evolution_chain.url
+                dataspecies.evolution_chain.url
             );
             const ev_chaindata = await ev_chainresponse.data;
             result.evolution = ev_chaindata.chain;
@@ -153,7 +153,10 @@ const Container: FC = () => {
                                         setOrder(false);
                                     }}
                                 >
-                                    <img src={byPokedex} alt={"img-byPokedex"}/>
+                                    <img
+                                        src={byPokedex}
+                                        alt={"img-byPokedex"}
+                                    />
                                 </button>
                                 <button
                                     id="byAZ"
@@ -162,7 +165,7 @@ const Container: FC = () => {
                                         setOrder(true);
                                     }}
                                 >
-                                    <img src={byAtoZ} alt={"img-byAtoZ"}/>
+                                    <img src={byAtoZ} alt={"img-byAtoZ"} />
                                 </button>
                             </div>
                         )}

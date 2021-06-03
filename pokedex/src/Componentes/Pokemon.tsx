@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Tilt from "react-parallax-tilt";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 import "./Pokemon.css";
 
 export interface IPokemon {
@@ -70,9 +71,22 @@ export interface IEv {
     };
 }
 
-const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
+interface IData {
+    stat_name: string;
+    value: number;
+}
+
+const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
     const pokemon = props.pokemon;
     const style = "pokemon-card-" + pokemon.types[0].type.name;
+
+    const data: IData[] = [];
+    pokemon.stats.forEach((stat) => {
+        data.push({
+            stat_name: stat.stat.name.substring(0, 11),
+            value: stat.base_stat,
+        });
+    });
 
     return (
         <Tilt>
@@ -177,8 +191,7 @@ const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
                                                 <div className="pokemon-type">
                                                     <text>
                                                         <b>Weight:</b>{" "}
-                                                        {pokemon.weight/10} 
-                                                        {" "}kg
+                                                        {pokemon.weight / 10} kg
                                                     </text>
                                                 </div>
                                                 <div
@@ -189,43 +202,33 @@ const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
                                                         <b>Statistics:</b>
                                                     </text>
                                                     <div>
-                                                        {pokemon.stats.map(
-                                                            (stat, idx) => {
-                                                                return (
-                                                                    <div
-                                                                        key={
-                                                                            idx
-                                                                        }
-                                                                        id={
-                                                                            stat
-                                                                                .stat
-                                                                                .name
-                                                                        }
-                                                                        className="pokemon-ability-text"
-                                                                    >
-                                                                        {
-                                                                            stat
-                                                                                .stat
-                                                                                .name
-                                                                        }
-                                                                        :{" "}
-                                                                        {
-                                                                            stat.base_stat
-                                                                        }
-                                                                        <br />
-                                                                    </div>
-                                                                );
-                                                            }
-                                                        )}
+                                                        <BarChart
+                                                            width={350}
+                                                            height={175}
+                                                            data={data}
+                                                        >
+                                                            <CartesianGrid strokeDasharray="3 3" />
+                                                            <XAxis
+                                                                dataKey={
+                                                                    "stat_name"
+                                                                }
+                                                                interval={0}
+                                                                angle={345}
+                                                                height={30}
+                                                            />
+                                                            <YAxis />
+                                                            <Tooltip />
+                                                            <Bar
+                                                                dataKey="value"
+                                                                fill="#8884d8"
+                                                            />
+                                                        </BarChart>
                                                     </div>
                                                 </div>
                                                 {pokemon.evolution &&
                                                     pokemon.evolution
                                                         .species && (
-                                                        <div
-                                                            className="pokemon-type"
-                                                            
-                                                        >
+                                                        <div className="pokemon-type">
                                                             <text>
                                                                 <b>
                                                                     Evolution
@@ -235,16 +238,39 @@ const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
                                                             <div className="ev">
                                                                 <div className="pokemon-ability-text">
                                                                     {pokemon.evolution &&
-                                                                    pokemon.evolution.species.name}
+                                                                        pokemon
+                                                                            .evolution
+                                                                            .species
+                                                                            .name}
                                                                 </div>
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon.evolution.evolves_to.length >0 &&
-                                                                        pokemon.evolution.evolves_to[0].species.name}
+                                                                    {pokemon
+                                                                        .evolution
+                                                                        .evolves_to
+                                                                        .length >
+                                                                        0 &&
+                                                                        pokemon
+                                                                            .evolution
+                                                                            .evolves_to[0]
+                                                                            .species
+                                                                            .name}
                                                                 </div>
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon.evolution.evolves_to.length > 0 &&
-                                                                    pokemon.evolution.evolves_to[0].evolves_to[0] &&
-                                                                    pokemon.evolution.evolves_to[0].evolves_to[0] .species.name}
+                                                                    {pokemon
+                                                                        .evolution
+                                                                        .evolves_to
+                                                                        .length >
+                                                                        0 &&
+                                                                        pokemon
+                                                                            .evolution
+                                                                            .evolves_to[0]
+                                                                            .evolves_to[0] &&
+                                                                        pokemon
+                                                                            .evolution
+                                                                            .evolves_to[0]
+                                                                            .evolves_to[0]
+                                                                            .species
+                                                                            .name}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -255,7 +281,6 @@ const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
                                 </div>
                             )}
                         </Popup>
-
                         <div>No.{pokemon.id}</div>
                     </div>
                     <div className="card-bottom">

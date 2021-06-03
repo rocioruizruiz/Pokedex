@@ -60,12 +60,12 @@ These are the project dependencies:
     "react-parallax-tilt": "^1.5.17",
     "react-scripts": "4.0.3",
     "reactjs-popup": "^2.0.4",
+    "recharts": "^2.0.9",
     "simplebar-react": "^2.3.3",
     "typescript": "^4.3.2",
     "web-vitals": "^1.1.2"
 }
 ```
-
 
 ## Learn More
 
@@ -73,7 +73,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Contributors ✨
+
+## ✨ Contributors 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->

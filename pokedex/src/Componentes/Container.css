@@ -63,7 +63,7 @@ nav {
 
 .viewType:hover button:focus:not(:hover) {
     flex-grow: 1;
-    background-color: #ffce31;
+    background-color: #fbe8aa;
 }
 
 .footer {
