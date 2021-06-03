@@ -22,8 +22,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development environment running.
 
-#### STEP 1: Download the ZIP code or clone the repository. 
-#### STEP 2: Open the project folder inside the repository.
+#### STEP 1: Download the ZIP code or clone the repository
+#### STEP 2: Open the project folder inside the repository
 ```
 cd pokedex/
 ```
