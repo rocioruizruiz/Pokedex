@@ -73,6 +73,13 @@ const Container: FC = () => {
         try {
             const response = await axios.get(url);
             const result: IPokemon = await response.data;
+            const responsespecies = await axios(result.species.url);
+            const dataspecies = await responsespecies.data;
+            const ev_chainresponse = await axios(
+                    dataspecies.evolution_chain.url
+            );
+            const ev_chaindata = await ev_chainresponse.data;
+            result.evolution = ev_chaindata.chain;
             if (!result) {
                 setNotFound(true);
                 setLoading(false);
@@ -137,7 +144,7 @@ const Container: FC = () => {
                     </div>
                 ) : (
                     <div>
-                        {!loading && (
+                        {!loading && total > 1 && (
                             <div className="viewType">
                                 <button
                                     id="byId"

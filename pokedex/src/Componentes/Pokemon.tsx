@@ -70,7 +70,7 @@ export interface IEv {
     };
 }
 
-const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
+const Pokemon: FC<{ pokemon: IPokemon}> = (props: { pokemon: IPokemon }) => {
     const pokemon = props.pokemon;
     const style = "pokemon-card-" + pokemon.types[0].type.name;
 
@@ -177,7 +177,8 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                                 <div className="pokemon-type">
                                                     <text>
                                                         <b>Weight:</b>{" "}
-                                                        {pokemon.weight}
+                                                        {pokemon.weight/10} 
+                                                        {" "}kg
                                                     </text>
                                                 </div>
                                                 <div
@@ -223,7 +224,7 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                                         .species && (
                                                         <div
                                                             className="pokemon-type"
-                                                            id="stats"
+                                                            
                                                         >
                                                             <text>
                                                                 <b>
@@ -234,47 +235,17 @@ const Pokemon: FC<{ pokemon: IPokemon }> = (props: { pokemon: IPokemon }) => {
                                                             <div className="ev">
                                                                 <div className="pokemon-ability-text">
                                                                     {pokemon.evolution &&
-                                                                        pokemon
-                                                                            .evolution
-                                                                            .species
-                                                                            .name}
+                                                                    pokemon.evolution.species.name}
                                                                 </div>
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon
-                                                                        .evolution
-                                                                        .evolves_to
-                                                                        .length >
-                                                                        0 &&
-                                                                        pokemon
-                                                                            .evolution
-                                                                            .evolves_to[0]
-                                                                            .species
-                                                                            .name}
+                                                                    {pokemon.evolution.evolves_to.length >0 &&
+                                                                        pokemon.evolution.evolves_to[0].species.name}
                                                                 </div>
                                                                 <div className="pokemon-ability-text">
-                                                                    {pokemon
-                                                                        .evolution
-                                                                        .evolves_to
-                                                                        .length >
-                                                                        0 &&
-                                                                        pokemon
-                                                                            .evolution
-                                                                            .evolves_to[0]
-                                                                            .evolves_to[0] &&
-                                                                        pokemon
-                                                                            .evolution
-                                                                            .evolves_to[0]
-                                                                            .evolves_to[0]
-                                                                            .species
-                                                                            .name}
+                                                                    {pokemon.evolution.evolves_to.length > 0 &&
+                                                                    pokemon.evolution.evolves_to[0].evolves_to[0] &&
+                                                                    pokemon.evolution.evolves_to[0].evolves_to[0] .species.name}
                                                                 </div>
-                                                                {/* {pokemon.evolution && pokemon.evolution.evolves_to[0].evolves_to.map((ev, idx) => {
-                                                    return (
-                                                        <div key={idx} id={ev.species.name} className="pokemon-ability-text">
-                                                            {ev.species.name}<br/>
-                                                        </div>
-                                                        );
-                                                })} */}
                                                             </div>
                                                         </div>
                                                     )}

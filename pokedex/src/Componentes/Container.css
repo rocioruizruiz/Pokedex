@@ -36,8 +36,9 @@ nav {
 
 .viewType {
     padding: 10px;
+    padding-top: 20px;
     display: flex;
-    width: 35%;
+    width: 15%;
     position: relative;
     left: 50%;
     transform: translate(-50%);
@@ -47,8 +48,9 @@ nav {
     flex-grow: 1;
     cursor: pointer;
     position: relative;
-    border: 1px solid #8786a0;
-    background-color: #ffce31;
+    border: 1px solid #706f89;
+    border-radius: 3px;
+    background-color: #fbe8aa;
     padding: 1px;
     transition: flex-grow 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -56,7 +58,7 @@ nav {
 .viewType button:hover,
 .viewType button:focus {
     flex-grow: 2;
-    background-color: #ce9b65;
+    background-color: rgba(40, 39, 93, 0.486);
 }
 
 .viewType:hover button:focus:not(:hover) {
@@ -73,6 +75,10 @@ nav {
     border-radius: 85% 85% 0 0/ 30%;
     color: white;
     font-size: small;
+}
+
+#byAZ {
+    width: 20%;
 }
 
 /******** POKEBALL ********/

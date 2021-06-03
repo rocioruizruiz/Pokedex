@@ -37,6 +37,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                 <div className="searchbar-btn">
                     <button
                         onClick={() => {
+                            setSearch('');
                             onSearch(search);
                         }}
                     >
@@ -46,7 +47,7 @@ const Searchbar: FC<{ onSearch: Function; pagination: IProps }> = (props: {
                 <div className="searchbar-btn">
                     <button
                         onClick={() => {
-                            setSearch("");
+                            setSearch('');
                             onSearch();
                         }}
                     >

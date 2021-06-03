@@ -53,6 +53,9 @@ h2 {
 b {
     margin-right: 10px;
 }
+text{
+    padding: 10px;
+}
 
 .pokemon-type {
     display: flex;
@@ -128,6 +131,11 @@ b {
     height: 200px;
 }
 
+.pokemon-popup-img { 
+    width: 100%;
+    resize: both;
+}
+
 .ev {
     display: flex;
     align-items: center;
@@ -138,6 +146,16 @@ b {
     border-left: solid 1px rgb(88, 113, 90);
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.945);
+}
+
+#stats{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#stats > text{
+    padding-top: 10px;
 }
 
 /******** ANIMATIONS ********/
