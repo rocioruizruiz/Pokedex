@@ -22,21 +22,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development environment running.
 
+
 Installing dependencies
 
 ```
 npm install
 ```
+### Set up
 
-Starting on local
+Remember to copy the .env.sample file on an .env file in your project
+
+### Starting on local
 
 ```
 npm start
 ```
 
-### Set up
 
-Remember to copy the .env.sample file on an .env file in your project
 
 
 ## 🖇 Dependencies
