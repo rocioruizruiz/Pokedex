@@ -28,7 +28,8 @@
 
 .card-body {
     justify-content: space-between;
-    padding: 20px;
+    margin: 5%;
+    width: 90%;
 }
 
 .card-top {
@@ -50,10 +51,7 @@ h2 {
     cursor: pointer;
 }
 
-b {
-    margin-right: 10px;
-}
-text{
+text {
     padding: 10px;
 }
 
@@ -72,11 +70,9 @@ text{
 }
 
 .pokemon-ability-text {
-    margin-right: 10px;
     text-transform: capitalize;
-    border-radius: 5px;
-    padding: 7px;
-    margin: 5px;
+    margin: 7px;
+    text-align: center;
 }
 
 /******** POPUP ********/
@@ -110,6 +106,7 @@ text{
     top: -15px;
     font-size: 24px;
     background: #ffffff;
+    border: rgb(255, 255, 255);
     border-radius: 18px;
 }
 
@@ -131,7 +128,7 @@ text{
     height: 200px;
 }
 
-.pokemon-popup-img { 
+.pokemon-popup-img {
     width: 100%;
     resize: both;
 }
@@ -148,13 +145,13 @@ text{
     background-color: rgba(255, 255, 255, 0.945);
 }
 
-#stats{
+#stats {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-#stats > text{
+#stats > text {
     padding-top: 10px;
 }
 
